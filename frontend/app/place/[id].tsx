@@ -5,7 +5,7 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 const spotData = {
   '1': { title: 'Hidden Waterfall', category: 'Secret Spots', desc: '"Tucked away behind the old ruins, this waterfall is a perfect peaceful escape. The water is crystal clear and freezing cold!"', images: ['https://images.unsplash.com/photo-1432405972618-c60002a157c6'], lat: 34.0522, lng: -118.2437 },
   '2': { title: 'Mountain View Cafe', category: 'Cafes', desc: '"Best pour-over coffee I have had in the hills. The altitude makes it taste different. Get there before 9am for the best lighting."', images: ['https://images.unsplash.com/photo-1554118811-1e0d58224f24'], lat: 34.0522, lng: -118.2437 },
-  '3': { title: 'Spicy Momo Stall', category: 'Momo Spots', desc: '"This stall has no name, but the fiery red chutney they serve with the steamed chicken momos will blow your mind."', images: ['https://images.unsplash.com/photo-1626804475297-4160cb462fff'], lat: 34.0522, lng: -118.2437 },
+  '3': { title: 'Spicy Momo Stall near the Market', category: 'Momo Spots', desc: '"This stall has no name, but the fiery red chutney they serve with the steamed chicken momos will blow your mind."', images: ['https://images.unsplash.com/photo-1626804475297-4160cb462fff'], lat: 34.0522, lng: -118.2437 },
   '4': { title: 'Sunset Point', category: 'Viewpoints', desc: '"You have to hike up about 20 minutes from the parking lot, but the panoramic sunset view over the valley is unmatched."', images: ['https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0'], lat: 34.0522, lng: -118.2437 },
 };
 
