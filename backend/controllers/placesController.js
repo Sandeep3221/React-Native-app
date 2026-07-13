@@ -1,6 +1,20 @@
 // Placeholder logic for retrieving all listings
 export const getPlaces = async (req, res) => {
   try {
+    let places= req.query.places;
+    if(places){
+      places = JSON.parse(places);
+    }
+    if(places && places.length > 0){
+      const filteredPlaces = await prisma.place.findMany({
+        where: {
+          id: {
+            in: places,
+          },
+        },
+      });
+      return res.status(200).json({ success: true, data: filteredPlaces });
+    }
     // TODO: Fetch places from database using Prisma
     // const places = await prisma.place.findMany();
     res.status(200).json({ success: true, data: [] });

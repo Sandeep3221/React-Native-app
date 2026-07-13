@@ -12,7 +12,8 @@ const spotData = {
 export default function PlaceDetailScreen() {
   const { id } = useLocalSearchParams();
   const router = useRouter();
-  const spot = spotData[id];
+  const spotId = Array.isArray(id) ? id[0] : id;
+  const spot = spotId ? spotData[spotId as keyof typeof spotData] : undefined;
 
   if (!spot) {
     return (
@@ -31,7 +32,9 @@ export default function PlaceDetailScreen() {
       android: `${scheme}${latLng}(${label})`
     });
 
-    Linking.openURL(url);
+    if (url) {
+      Linking.openURL(url);
+    }
   };
 
   return (
@@ -40,7 +43,7 @@ export default function PlaceDetailScreen() {
         
         {/* Top Section: Image Swiper */}
         <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false} style={styles.swiper}>
-          {spot.images.map((img, idx) => (
+          {spot.images.map((img: string, idx: number) => (
             <Image key={idx} source={{ uri: img }} style={styles.swiperImage} />
           ))}
         </ScrollView>
